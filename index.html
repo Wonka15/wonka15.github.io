@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Welcome to My Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 
+        # Styles Section 
+        - Contains all CSS for layout and design
+        - Button styling is grouped and labeled
+    -->
     <style>
+        /* === Base Styles === */
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
@@ -28,7 +34,7 @@
             margin-top: 40px;
             color: #888;
         }
-        /* Neumorphic Soft Green Button Style */
+        /* === Neumorphic Soft Green Button === */
         .neumorphic-button {
             border: none;
             outline: none;
@@ -50,6 +56,7 @@
             box-shadow: inset 4px 4px 8px #b2e2cf,
                         inset -4px -4px 8px #f6fffa;
         }
+        /* === Banner Styles === */
         .banner {
             background-color: rgba(34, 51, 102, 0.15); /* Soft navy with transparency */
             padding: 20px 0;
@@ -61,24 +68,48 @@
             margin: 0;
             color: #223366;
         }
+        /* === Image Styles === */
+        .main-image {
+            display: block;
+            margin: 0 auto 24px auto;
+            border-radius: 6px;
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
+    <!-- # Header Section -->
     <header>
         <div class="banner">
             <h1>Welcome to My Homepage</h1>
         </div>
     </header>
    
+    <!-- # Main Content Section -->
     <main>
-        <p>Hello! This is a simple homepage created with HTML and CSS by Noah.</p>
-        <p>Please click on the button below to be redirected to my Portfolio.</p> 
-        <button class="neumorphic-button" onclick="window.location.href='portfolio.html'">
+        <!-- # Introduction Text -->
+        <p>
+            Hello! This is a simple homepage created with HTML and CSS by Noah.
+        </p>
+
+        <!-- # Portfolio Button -->
+        <p>
+            Please click on the button below to be redirected to my Portfolio.
+        </p>
+        <button 
+            class="neumorphic-button" 
+            onclick="window.location.href='portfolio.html'">
             Go to Portfolio
         </button>
-        <img src="Dog.png" alt="Example Image" style="display:block; margin:0 auto 24px; border-radius:6px; max-width:100%;">
+
+        <!-- # Main Image -->
+        <img 
+            src="Dog.png" 
+            alt="Example Image" 
+            class="main-image">
     </main>
 
+    <!-- # Footer Section -->
     <footer>
         &copy; 2025 Noah's Design Studio 
     </footer>
