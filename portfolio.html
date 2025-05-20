@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My 3D Renders Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #222;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .caption {
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            color: #888;
+            font-size: 1rem;
+        }
+        @media (max-width: 600px) {
+            .gallery-item img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My 3D Renders Portfolio</h1>
+        <p>Showcasing my best 3D artworks and renders</p>
+    </header>
+    <main>
+        <section>
+            <div class="gallery">
+                <!-- Example gallery items below. Replace src and caption text with your own -->
+                <div class="gallery-item">
+                    <img src="images/render1.jpg" alt="Render 1">
+                    <div class="caption">Title or description for Render 1</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/render2.jpg" alt="Render 2">
+                    <div class="caption">Title or description for Render 2</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/render3.jpg" alt="Render 3">
+                    <div class="caption">Title or description for Render 3</div>
+                </div>
+                <!-- Add or duplicate more gallery-item blocks for more renders -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Your Name. All rights reserved.
+    </footer>
+</body>
+</html>
