@@ -97,8 +97,8 @@
             Please click on the button below to be redirected to my Portfolio.
         </p>
         <button 
-            class="neumorphic-button" 
-            onclick="window.location.href='portfolio.html'">
+            id="portfolioBtn"
+            class="neumorphic-button">
             Go to Portfolio
         </button>
 
@@ -113,5 +113,45 @@
     <footer>
         &copy; 2025 Noah's Design Studio 
     </footer>
+
+    <!-- === Halo Recharge Button Sound Effect === -->
+    <script>
+    document.getElementById('portfolioBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent immediate navigation
+
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const shimmer = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        // Main rising sound
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(400, ctx.currentTime);
+        osc.frequency.linearRampToValueAtTime(1200, ctx.currentTime + 0.35);
+
+        // Shimmer overtone
+        shimmer.type = 'triangle';
+        shimmer.frequency.setValueAtTime(880, ctx.currentTime);
+
+        // Volume envelope
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.1);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
+
+        osc.connect(gain);
+        shimmer.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start();
+        shimmer.start();
+        osc.stop(ctx.currentTime + 0.5);
+        shimmer.stop(ctx.currentTime + 0.5);
+
+        setTimeout(() => {
+            ctx.close();
+            window.location.href = 'portfolio.html'; // Redirect after sound
+        }, 500);
+    });
+    </script>
 </body>
 </html>
