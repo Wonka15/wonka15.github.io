@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <title>Welcome to My Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 
-        # Styles Section 
-        - Contains all CSS for layout and design
-        - Button styling is grouped and labeled
+    <!--
+        ==========================
+        CSS Styles Section
+        ==========================
+        - This part controls how everything looks (colors, fonts, layout)
+        - You can add more styles here later as you grow your website!
     -->
     <style>
-        /* === Base Styles === */
+        /* --- Basic Page Layout and Colors --- */
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Easy-to-read text */
             margin: 40px;
-            background: #f5f5f5;
+            background: #f5f5f5;   /* Light background color */
             color: #333;
         }
         header {
-            text-align: center;
+            text-align: center;    /* Center everything in the header */
             margin-bottom: 40px;
         }
         main {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 600px;      /* Keeps content from getting too wide */
+            margin: 0 auto;        /* Center the main area */
             background: #fff;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;    /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow effect */
         }
         footer {
             text-align: center;
             margin-top: 40px;
             color: #888;
         }
-        /* === Neumorphic Soft Green Button === */
+        /* --- Special Button Style (Neumorphic look) --- */
         .neumorphic-button {
             border: none;
             outline: none;
@@ -53,10 +55,11 @@
             margin-right: auto;
         }
         .neumorphic-button:active {
+            /* Button looks pressed when clicked */
             box-shadow: inset 4px 4px 8px #b2e2cf,
                         inset -4px -4px 8px #f6fffa;
         }
-        /* === Banner Styles === */
+        /* --- Banner Style (Top of the page) --- */
         .banner {
             background-color: rgba(34, 51, 102, 0.15); /* Soft navy with transparency */
             padding: 20px 0;
@@ -68,31 +71,47 @@
             margin: 0;
             color: #223366;
         }
-        /* === Image Styles === */
+        /* --- Image Style --- */
         .main-image {
             display: block;
             margin: 0 auto 24px auto;
             border-radius: 6px;
-            max-width: 100%;
+            max-width: 100%; /* Makes image fit screen on mobile */
         }
     </style>
 </head>
 <body>
-    <!-- # Header Section -->
+    <!-- 
+        ==========================
+        Header Section
+        ==========================
+        - This is the top part of your page (like a title/banner)
+        - You can put your name, a logo, or a welcome message here
+    -->
     <header>
         <div class="banner">
             <h1>Welcome to My Homepage</h1>
         </div>
     </header>
    
-    <!-- # Main Content Section -->
+    <!-- 
+        ==========================
+        Main Content Section
+        ==========================
+        - This is where your main info goes
+        - Add more sections here to expand your site!
+    -->
     <main>
-        <!-- # Introduction Text -->
+        <!-- Introduction message -->
         <p>
             Hello! This is a simple homepage created with HTML and CSS by Noah.
         </p>
 
-        <!-- # Portfolio Button -->
+        <!-- 
+            Portfolio Button
+            - When someone clicks this button, they’ll be taken to your portfolio page
+            - You can change the link in the JavaScript below if your portfolio is somewhere else
+        -->
         <p>
             Please click on the button below to be redirected to my Portfolio.
         </p>
@@ -102,23 +121,41 @@
             Go to Portfolio
         </button>
 
-        <!-- # Main Image -->
+        <!-- 
+            Main Image
+            - You can change "images/Dog.png" to any image you like
+            - Put your image in the "images" folder (or update the path as needed)
+        -->
         <img 
             src="images/Dog.png" 
             alt="Example Image" 
             class="main-image">
     </main>
 
-    <!-- # Footer Section -->
+    <!-- 
+        ==========================
+        Footer Section
+        ==========================
+        - Appears at the bottom of your page
+        - Good for copyright info or contact details
+    -->
     <footer>
         &copy; 2025 Noah's Design Studio 
     </footer>
 
-    <!-- === Halo Recharge Button Sound Effect === -->
+    <!-- 
+        ==========================
+        JavaScript Section (Interactive features)
+        ==========================
+        - This code adds a cool sound when the button is clicked, then redirects to your portfolio page
+        - If you want to add more interactive features, you can put more scripts like this here
+    -->
     <script>
+    // When someone clicks the "Go to Portfolio" button...
     document.getElementById('portfolioBtn').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent immediate navigation
+        event.preventDefault(); // Stops the page from changing instantly
 
+        // --- Sound Effect Code (you can remove if you don’t want sound) ---
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
         const osc = ctx.createOscillator();
         const shimmer = ctx.createOscillator();
@@ -133,7 +170,7 @@
         shimmer.type = 'triangle';
         shimmer.frequency.setValueAtTime(880, ctx.currentTime);
 
-        // Volume envelope
+        // Volume (how loud it sounds)
         gain.gain.setValueAtTime(0.001, ctx.currentTime);
         gain.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.1);
         gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
@@ -147,9 +184,10 @@
         osc.stop(ctx.currentTime + 0.5);
         shimmer.stop(ctx.currentTime + 0.5);
 
+        // After the sound, go to the Portfolio page
         setTimeout(() => {
             ctx.close();
-            window.location.href = 'portfolio.html'; // Redirect after sound
+            window.location.href = 'portfolio.html'; // CHANGE THIS if your portfolio page is named differently!
         }, 500);
     });
     </script>
