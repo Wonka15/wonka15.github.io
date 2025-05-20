@@ -28,6 +28,28 @@
             margin-top: 40px;
             color: #888;
         }
+        /* Neumorphic Soft Green Button Style */
+        .neumorphic-button {
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            padding: 16px 32px;
+            background: #d4f5e9; /* Soft green */
+            box-shadow: 8px 8px 16px #b2e2cf,
+                        -8px -8px 16px #f6fffa;
+            color: #22543d;
+            font-size: 1rem;
+            transition: box-shadow 0.2s;
+            cursor: pointer;
+            margin: 16px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .neumorphic-button:active {
+            box-shadow: inset 4px 4px 8px #b2e2cf,
+                        inset -4px -4px 8px #f6fffa;
+        }
     </style>
 </head>
 <body>
@@ -35,31 +57,17 @@
         <h1>Welcome to My Homepage</h1>
     </header>
    
-    
     <main>
-        
         <p>Hello! This is a simple homepage created with HTML and CSS by Noah.</p>
-        
         <p>Please click on the button below to be redirected to my Portfolio.</p> 
-        
-        <button onclick="window.location.href='portfolio.html'">Go to Portfolio</button>
-        
-        <div class="center">
-        <button>My Button</button>
-        </div>
-  
-        
-        
+        <button class="neumorphic-button" onclick="window.location.href='portfolio.html'">
+            Go to Portfolio
+        </button>
         <img src="Dog.png" alt="Example Image" style="display:block; margin:0 auto 24px; border-radius:6px; max-width:100%;">
-        
     </main>
 
-
-    
     <footer>
         &copy; 2025 Noah's Design Studio 
     </footer>
-
-    
 </body>
 </html>
