@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My 3D Renders Portfolio</title>
+    <title>Portfolio – UI/UX & 3D Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         /* Basic page styles */
@@ -19,11 +19,33 @@
             padding: 1.5rem 0;
             text-align: center;
         }
-        /* Main content area */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #222;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+        nav a:hover {
+            background: #eee;
+        }
         main {
             max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
+        }
+        h2 {
+            margin-top: 2rem;
+            font-size: 2rem;
+            color: #333;
+            border-left: 8px solid #a3e635;
+            padding-left: 0.5rem;
         }
         /* Gallery grid styles */
         .gallery {
@@ -31,7 +53,6 @@
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
-        /* Individual gallery item styles */
         .gallery-item {
             background: #fff;
             border-radius: 8px;
@@ -40,18 +61,15 @@
             text-align: center;
             transition: transform 0.2s;
         }
-        /* Hover effect for gallery items */
         .gallery-item:hover {
             transform: translateY(-4px) scale(1.02);
         }
-        /* Image styles */
         .gallery-item img {
             width: 100%;
             height: 220px;
             object-fit: cover;
             display: block;
         }
-        /* Caption styles */
         .caption {
             padding: 0.7rem 1rem;
             font-size: 1rem;
@@ -69,47 +87,106 @@
                 height: 150px;
             }
         }
+        /* Color-coded comment styling (for developer notes only) */
+        .dev-comment {
+            font-size: 0.95em;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            border-radius: 6px;
+        }
+        .comment-green { background: #e6ffe6; color: #15803d; border: 1px solid #bbf7d0; }
+        .comment-yellow { background: #fffbe6; color: #ca8a04; border: 1px solid #fde68a; }
+        .comment-red { background: #ffe6e6; color: #b91c1c; border: 1px solid #fecaca; }
+        .comment-blue { background: #e6f0ff; color: #2563eb; border: 1px solid #bfdbfe; }
     </style>
 </head>
 <body>
-    <!-- Header section -->
+    <!-- Header Section -->
     <header>
-        <h1>My 3D Renders Portfolio</h1>
-        <p>Showcasing my best 3D artworks and renders</p>
+        <h1>My Portfolio – UI/UX & 3D Design</h1>
+        <p>Showcasing my creative work in digital design, 3D modeling, and user experience</p>
     </header>
 
-    <!-- Main content section -->
+    <!-- Navigation Bar (edit section names as needed) -->
+    <nav>
+        <a href="#uiux">UI/UX Design</a>
+        <a href="#3d">3D Design & Modeling</a>
+        <a href="#about">About</a>
+    </nav>
+
     <main>
-        <section>
-            <div class="gallery">
-                <!-- Gallery Item 1: City Render -->
-                <div class="gallery-item">
-                    <!-- Image must be placed in the images folder and be named exactly as referenced (case-sensitive) -->
-                    <img src="images/City.jpg" alt="City 3D Render">
-                    <div class="caption">A futuristic cityscape created with Blender.</div>
-                </div>
-                <!-- Gallery Item 2: Space Render -->
-                <div class="gallery-item">
-                    <!-- Use the correct filename: 'space.jpg', not 'Space.jpg' -->
-                    <img src="images/space.jpg" alt="Space 3D Render">
-                    <div class="caption">An outer space scene with planets and stars.</div>
-                </div>
-                <!-- Gallery Item 3: Donut Render -->
-                <div class="gallery-item">
-                    <img src="images/Donut.jpg" alt="Donut 3D Render">
-                    <div class="caption">The classic Blender donut – sweet and shiny!</div>
-                </div>
-                <!-- Example of how to add more renders: just copy and edit the block below
-                <div class="gallery-item">
-                    <img src="images/Dog.png" alt="Dog 3D Render">
-                    <div class="caption">A playful 3D dog character.</div>
-                </div>
-                -->
+        <!-- UI/UX DESIGN SECTION -->
+        <h2 id="uiux">UI/UX Design</h2>
+        <div class="dev-comment comment-blue">
+            <!-- Blue: UI/UX Section - Add images, screenshots, or case studies from your UI/UX projects here -->
+            Example: Upload wireframes, prototypes, app or website screens.<br>
+            <b>To Add:</b> Place your UI/UX project images in the <span style="font-family: monospace;">images</span> folder and reference here.
+        </div>
+        <div class="gallery">
+            <!-- Example gallery item for UI/UX -->
+            <div class="gallery-item">
+                <img src="images/uiux1.jpg" alt="UI/UX Project 1">
+                <div class="caption">Mobile app interface for task management (Figma prototype)</div>
             </div>
-        </section>
+            <!-- 
+            <div class="gallery-item">
+                <img src="images/uiux2.jpg" alt="UI/UX Project 2">
+                <div class="caption">Web dashboard redesign for analytics platform</div>
+            </div>
+            -->
+        </div>
+
+        <!-- 3D DESIGN & MODELING SECTION -->
+        <h2 id="3d">3D Design & Modeling</h2>
+        <div class="dev-comment comment-green">
+            <!-- Green: 3D Artwork Section - Upload your 3D renders and models here -->
+            <b>IMPORTANT:</b> Only three pictures currently in your portfolio.<br>
+            <b>To Add/Change:</b> Place your 3D render images in the <span style="font-family: monospace;">images</span> folder and reference them below.
+        </div>
+        <div class="gallery">
+            <!-- Gallery Item 1: City Render -->
+            <div class="gallery-item">
+                <img src="images/City.jpg" alt="City 3D Render">
+                <div class="caption">Futuristic cityscape created in Blender.</div>
+            </div>
+            <!-- Gallery Item 2: Space Render -->
+            <div class="gallery-item">
+                <img src="images/space.jpg" alt="Space 3D Render">
+                <div class="caption">Outer space scene with planets and stars.</div>
+            </div>
+            <!-- Gallery Item 3: Donut Render -->
+            <div class="gallery-item">
+                <img src="images/Donut.jpg" alt="Donut 3D Render">
+                <div class="caption">Classic Blender donut – sweet and shiny!</div>
+            </div>
+            <!--
+            <div class="dev-comment comment-yellow">
+                <!-- Yellow: Add More Artwork Here -->
+                To add more 3D art, copy this block and update the image filename and caption.
+                Example:
+                <div class="gallery-item">
+                    <img src="images/newart.jpg" alt="Art Description">
+                    <div class="caption">Your caption here.</div>
+                </div>
+            </div>
+            -->
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <h2 id="about">About & Contact</h2>
+        <div class="dev-comment comment-red">
+            <!-- Red: About Section - Update your bio and contact info below -->
+            Update "Your Name", bio, resume, and contact links to your info!
+        </div>
+        <p>
+            Hi! I'm <b>Your Name</b>, a designer passionate about creating seamless user experiences and visually compelling 3D models.<br>
+            <span style="font-size: 1.1em;">Skills:</span> UI/UX design, 3D modeling (Blender, Roblox Studio, Maya), prototyping, collaboration.<br>
+            <span style="font-size: 1.1em;">Resume:</span> <a href="resume.pdf" target="_blank">Download PDF</a><br>
+            <span style="font-size: 1.1em;">Contact:</span> <a href="mailto:your@email.com">your@email.com</a> | <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        </p>
     </main>
 
-    <!-- Footer section -->
+    <!-- Footer Section -->
     <footer>
         &copy; 2025 Your Name. All rights reserved.
     </footer>
